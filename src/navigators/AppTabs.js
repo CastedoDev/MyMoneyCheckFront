@@ -9,12 +9,13 @@ import UserScreen from "../screens/app/UserScreem";
 import {FontAwesome} from '@expo/vector-icons';
 import {Foundation} from '@expo/vector-icons';
 import {Ionicons} from '@expo/vector-icons';
+import DailyExpensesNavigator from "./DailyExpensesNavigator";
 
 function MyTabBar({navigation}) {
     return (
         <View style={{flexDirection: 'row'}}>
             <TouchableOpacity style={{flex: 1, alignItems: 'center', padding: 5, borderColor: 'black'}} onPress={() => {
-                navigation.navigate("DailyExpensesScreen")
+                navigation.navigate("DailyExpenses")
             }}>
 
                 <Foundation name="clipboard-notes" size={24} color="black"/>
@@ -47,7 +48,7 @@ const AppTabs = () => {
             screenOptions={{
                 headerShown: false
             }}>
-            <Tab.Screen name="DailyExpenses" component={DailyExpensesScreen}/>
+            <Tab.Screen name="DailyExpenses" component={DailyExpensesNavigator}/>
             <Tab.Screen name="Home" component={HomeScreen}/>
             <Tab.Screen name="User" component={UserScreen}/>
         </Tab.Navigator>
